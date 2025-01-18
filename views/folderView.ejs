@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=folderDetails.folder_name%></title>
+  </head>
+  <body>
+    <h1><%=folderDetails.folder_name%> Details</h1>
+    <ul>
+      <li>
+        <a href="/<%=folderDetails.folder_id%>/upload-file">Upload File</a>
+      </li>
+    </ul>
+
+    <ul>
+      <%folderFiles.forEach((file) => {%>
+
+      <li>
+        <%=file.file_name%> <a href="/<%=file.file_id%>/view-file">View File</a>
+      </li>
+
+      <%})%>
+    </ul>
+  </body>
+</html>

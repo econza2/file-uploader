@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Success</title>
+  </head>
+  <body>
+    <h1>Login Success</h1>
+    <ul>
+      <li><a href="/add-folder">Add Folder</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+
+    <ul>
+      <%userFolders.forEach((folder) => {%>
+      <li>
+        <%= folder.folder_name%>
+        <a href="/<%=folder.folder_id%>/view-folder">View Folder</a>
+        <a href="/<%=folder.folder_id%>/rename-folder">Rename Folder</a>
+
+        <form
+          action="/<%=folder.folder_id%>/delete-folder"
+          method="post"
+          style="display: inline"
+        >
+          <button type="submit">Delete Folder</button>
+        </form>
+      </li>
+
+      <%})%>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=fileDetails.file_name%></title>
+  </head>
+  <body>
+    <h1>File Details</h1>
+    Name: <%=fileDetails.file_name%> <br />Size: <%=fileDetails.file_size%>
+    <br />
+    Upload Time: <%=fileDetails.upload_time%> <br />
+    <a href="<%= fileDetails.file_data%>" download="<%=fileDetails.file_name%>"
+      >Download File</a
+    >
+    <button
+      type="submit"
+      onclick="window.location.href='<%=fileDetails.file_data%>'"
+    >
+      Download!
+    </button>
+  </body>
+</html>
